@@ -11,14 +11,19 @@ namespace SksTimeTable
         public static bool registerMember(string user, string pass)
         {
             try {
-                byte[] hashedVal = HashGenerator.getHash(user, pass);
-                MySqlConnection dbcon = ConnectionManager.GetDatabaseConnection();
-                using (dbcon)
-                {
+                string hashedVal = HashGenerator.getHash(user, pass).ToString(); //calling the gethash method in hashgenerator class to get a ency pass+username as password
+                                                                                 //MySqlConnection dbcon = ConnectionManager.GetDatabaseConnection();
+                                                                                 //using (dbcon)
+                                                                                 //{
 
+                                                                                 //}
+                if (DataAccessLayer.isMemRegSuccessful(user, hashedVal) == false)
+                {
+                    return false;
                 }
                 return true;
-            } catch(Exception ex){
+            }
+            catch (Exception){
                 return false;
             }
         }
