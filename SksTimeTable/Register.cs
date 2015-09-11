@@ -11,8 +11,8 @@ namespace SksTimeTable
         public static bool registerMember(string user, string pass)
         {
             try {
-                string hashedVal = HashGenerator.getHash(user, pass).ToString(); //calling the gethash method in hashgenerator class to get a ency pass+username as password
-                                                                                 //MySqlConnection dbcon = ConnectionManager.GetDatabaseConnection();
+                string hashedVal = HashGenerator.getHash(user, pass); //calling the gethash method in hashgenerator class to get a ency pass+username as password
+                                                                                //MySqlConnection dbcon = ConnectionManager.GetDatabaseConnection();
                                                                                  //using (dbcon)
                                                                                  //{
 
