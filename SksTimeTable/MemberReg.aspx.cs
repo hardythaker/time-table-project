@@ -15,16 +15,18 @@ namespace SksTimeTable
         }
 
         protected void RegMemBtn_Click(object sender, EventArgs e)
-        {
-            if (Register.registerMember(UsernameTB.Text, PasswordTB.Text))
+        { 
+            if (Register.registerMember(UserNameTB.Text, PasswordTB.Text))
             {
-                Response.Write("Successfully registered");
+                //Response.Write("Successfully registered");
+                regmsg.Text = "Successfully registered";
             }
             else
             {
-                Response.Write("Registration failed");
+                //Response.Write("Registration failed");
+                regmsg.Text = "Registration failed Try Again Later";
             }
-                
+             
         }
     }
 }
