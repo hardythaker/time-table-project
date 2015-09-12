@@ -85,7 +85,7 @@
                                 <td class="auto-style14" style="font-size: large" valign="middle" >
                                     SVV Mail ID : </td>
                                 <td align="Center" class="auto-style16">
-                                    <asp:TextBox ID="UserNameTB" runat="server" Width="93%" Placeholder="Enter SVV Mail ID..." CssClass="auto-style13"></asp:TextBox>
+                                    <asp:TextBox ID="UserNameTB" runat="server" Width="93%" Placeholder="Enter SVV Mail ID..." CssClass="auto-style13" TextMode="Email"></asp:TextBox>
                                 </td>
                                 <td class="auto-style1">
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="UserNameTB" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
@@ -101,7 +101,8 @@
                             </tr>--%>
                             <tr>
                                 <td style="font-size: large" valign="middle" class="auto-style15">
-                                    Password : </td>
+                                    Password :
+                                </td>
                                 <td align="Center" class="auto-style17">
                                     <asp:TextBox ID="PasswordTB" runat="server" TextMode="Password" Width="92%" MaxLength="16"  Placeholder="Password..."></asp:TextBox>
                                 </td>
@@ -111,12 +112,12 @@
                             </tr>
                             <tr>
                                 <td align="Center" colspan="3">                              
-                                    <asp:Button ID="loginSubmitBtn" runat="server" Text="Sign IN" Width="100px" Font-Size="Large" OnClick="loginSubmitBtn_Click"/>
+                                    <asp:Button ID="loginSubmitBtn" runat="server" Text="Sign In" Width="100px" Font-Size="Large" OnClick="loginSubmitBtn_Click"/>
                                 </td>
                             </tr>          
                             <tr>
                                 <td align="center" colspan="3">
-                                    <asp:Label ID="msg" runat="server" ForeColor="Red"></asp:Label><br />
+                                    <asp:Label ID="msg" runat="server" ForeColor="Red" CssClass="auto-style19"></asp:Label><br />
                                     <asp:Label ID="msg2" runat="server" ForeColor="#9AC9ED"></asp:Label>
                             </td></tr>
                         </table>

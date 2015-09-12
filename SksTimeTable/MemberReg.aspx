@@ -32,7 +32,7 @@
                 <td  width=""  align="center"><asp:TextBox ID="UserNameTB" runat="server" TextMode="Email" Placeholder="SVV Mail ID.." MaxLength="45" OnTextChanged="UserNameTB_TextChanged"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*" ControlToValidate="UserNameTB" Display="Dynamic"></asp:RequiredFieldValidator> 
                             <br />
-                            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Invalid Email Address." ControlToValidate="UserNameTB" Display="Dynamic" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Invalid Email Address." ControlToValidate="UserNameTB" Display="Dynamic" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ForeColor="Red"></asp:RegularExpressionValidator>
                 </td>               
             </tr>
             <tr>
@@ -40,12 +40,12 @@
                 <td  width=""  align="center"><asp:TextBox ID="PasswordTB" runat="server" TextMode="Password" Placeholder="Password" ControlToValidate="PasswordTB"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*" ControlToValidate="PasswordTB" Display="Dynamic">*</asp:RequiredFieldValidator>
                 <br />
-                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="PasswordTB" Display="Dynamic" ErrorMessage='Password must be 8-10 characters long with at least one numeric,</br> one alphabet and one special character.' ValidationExpression="(?=^.{8,10}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&*()_+}{&quot;:;'?/>.<,])(?!.*\s).*$" ForeColor="Red"></asp:RegularExpressionValidator>       
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="PasswordTB" Display="Dynamic" ErrorMessage='Password Must be 6-12 Characters Long &lt;br/&gt; With at Least One Numeric,&lt;/br&gt; One Alphabet and One Special Character.' ValidationExpression="(?=^.{6,12}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&*()_+}{&quot;:;'?/>.<,])(?!.*\s).*$" ForeColor="Red"></asp:RegularExpressionValidator>       
                 </td>                
             </tr>
             
             <tr>
-                <td colspan="0" align="center"><asp:Button ID="RegMemBtn" runat="server" OnClick="RegMemBtn_Click" Text="Button" /></td>                
+                <td colspan="0" align="center"><asp:Button ID="RegMemBtn" runat="server" OnClick="RegMemBtn_Click" Text="Sign Up" /></td>                
             </tr>
             <tr><td align="center" colspan="2">
                                     <asp:Label ID="regmsg" runat="server" ForeColor="Red"></asp:Label>
