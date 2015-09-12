@@ -90,6 +90,9 @@ border-radius: 25px;
 #RequiredFieldValidator1, #RequiredFieldValidator2 {
       color:red;  
 }
+#LoginEmailWrong_ValidationControl {
+        color:red;
+}
 
 .ErrorControl
     {
