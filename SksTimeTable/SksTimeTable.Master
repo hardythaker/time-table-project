@@ -34,7 +34,7 @@
                 <ul class="nav">
                    <li><a href="admin.aspx">Home</a></li>
                    <li><a href="#">Time Table</a></li>
-                   <li><a href="#">Add DATA</a></li>
+                   <li><a href="addData.aspx">Add DATA</a></li>
                    <li><a href="#">Class</a></li>
                    <li><a href="Logout.aspx">Logout</a></li>
                 </ul>
