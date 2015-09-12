@@ -10,6 +10,7 @@ namespace SksTimeTable
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             if (!(Session["username"] == null))
             {
                 Response.Redirect("admin.aspx");
@@ -17,26 +18,29 @@ namespace SksTimeTable
         }
         protected void loginSubmitBtn_Click(object sender, EventArgs e)
         {
-            string username = UserNameTB.Text;
+            //string username = UserNameTB.Text;
             //PwdEncrypt.passwordEnc(PasswordTB.Text);
-            string password = PasswordTB.Text;
-            try
-            {
-                DataSet dSet = DataAccessLayer.isMemberExits(username, password);
+            //string password = PasswordTB.Text;
+            string hashval = HashGenerator.getHash(UserNameTB.Text,PasswordTB.Text);
 
-                if (dSet.Tables[0].Rows.Count > 0)
-                {
+            if(DataAccessLayer.isMemberExits(UserNameTB.Text, hashval))
+            { 
+                //if (dSet.Tables[0].Rows.Count > 0)
+                //{
                     Session["username"] = UserNameTB.Text;
                     Response.Redirect("Admin.aspx");
-                }
-                else
-                {
-                    msg.Text = "Wrong user id or Password";
-                }
+                //}
+                
             }
-            catch(Exception ex) {
-                Response.Write(ex.Message);
+            else
+            {
+
+                msg.Text = "Wrong user id or Password";
+                msg2.Text = " Not A member ? Click <a href=MemberReg.aspx>Here</a> To Register ";
             }
+            //catch (Exception ex) {
+            //    Response.Write(ex.Message);
+            //}
         }
     }
 }

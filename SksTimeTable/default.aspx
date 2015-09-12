@@ -16,12 +16,24 @@
             height: 34px;
             width: 233px;
         }
-        .auto-style4 {
-            width: 91px;
-            text-align: center;
-        }
         .auto-style5 {
             width: 233px;
+        }
+        .auto-style6 {
+            height: 35px;
+            text-align: right;
+        }
+        .auto-style7 {
+            color: #9AC9ED;
+            font-size: large;
+        }
+        .auto-style8 {
+            font-size: large;
+        }
+        .auto-style9 {
+            font-size: xx-large;
+            text-align: center;
+            text-decoration: underline;
         }
     </style>
 <script type = "text/javascript" >
@@ -37,11 +49,9 @@
 <body style="vertical-align:middle; height: 641px;" >
     <div class="auto-style2">
         <table align="center" style="margin-top:10%;height:60%"  width="800px" cellspacing="10" bgcolor="#CCCCCC"  >
-            <tr><td></td></tr><tr><td class="auto-style2"></td></tr>
+            <tr><td></td></tr><tr><td class="auto-style6"><span class="auto-style8"><em>Not A Member ?</em></span> <a href="MemberReg.aspx" style="color:rgb(50, 164, 255)"><em><strong><span class="auto-style7">Sing Up</span></strong></em></a></td></tr>
             <tr>
-                <td class="auto-style4" dir="ltr" style="font-size: xx-large; " bgcolor="#E4E4E4">
-                  
-                    &nbsp;Admin Login</td>
+                <td class="auto-style9"> <em>Admin Login </em> </td>
             </tr>
             <tr>
                 <td class="auto-style1" bgcolor="#E4E4E4">
@@ -50,8 +60,7 @@
                             <tr>
                                 <td align="center" width="220px" class="auto-style1" style="font-size: large" valign="middle" >
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    User Name :
-                                </td>
+                                    Svv Mail ID : </td>
                                 <td align="Center" class="auto-style3">
                                     <asp:TextBox ID="UserNameTB" runat="server" Width="100%"></asp:TextBox>
                                 </td>
@@ -74,14 +83,13 @@
                             </tr>
                             <tr>
                                 <td align="Center" colspan="3">                              
-                                    <asp:Button ID="loginSubmitBtn" runat="server" Text="Submit" Width="100px" Font-Size="Large" OnClick="loginSubmitBtn_Click"/>
+                                    <asp:Button ID="loginSubmitBtn" runat="server" Text="Sign IN" Width="100px" Font-Size="Large" OnClick="loginSubmitBtn_Click"/>
                                 </td>
-                            </tr>
+                            </tr>          
                             <tr>
-                                <td><a href="MemberReg.aspx">Registration</a></td>
-                            </tr>
-                            <tr><td align="center" colspan="3">
-                                    <asp:Label ID="msg" runat="server" ForeColor="Red"></asp:Label>
+                                <td align="center" colspan="3">
+                                    <asp:Label ID="msg" runat="server" ForeColor="Red"></asp:Label><br />
+                                    <asp:Label ID="msg2" runat="server" ForeColor="#9AC9ED"></asp:Label>
                             </td></tr>
                         </table>
                     </form>
