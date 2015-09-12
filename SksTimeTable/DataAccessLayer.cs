@@ -10,10 +10,6 @@ namespace SksTimeTable
 {
     public class DataAccessLayer
     {
-        HttpResponse response;
-
-        public static object Elmah { get; private set; }
-
         public static DataSet DisplayAllUsers()
         {
             DataSet dSet = new DataSet();
@@ -48,6 +44,7 @@ namespace SksTimeTable
                     command.Parameters.Add("@encPwd", MySqlDbType.VarChar).Value = encPass;
                     MySqlDataAdapter adapter = new MySqlDataAdapter();
                     adapter.SelectCommand = command;
+                    connection.Close();
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
                     if (dt.Rows.Count == 1)
@@ -81,16 +78,18 @@ namespace SksTimeTable
 
                     //MySqlDataAdapter adapter = new MySqlDataAdapter();
                     //adapter.InsertCommand = command;
-                    command.ExecuteNonQuery();
+                    int affectedrows = command.ExecuteNonQuery();
                     connection.Close();
-    
-                    return true;
+                    if (affectedrows == 1)
+                    {
+                        return true;
+                    }
+                    else return false;
                 }
-                catch (Exception) {
+                catch (Exception)
+                {
                     return false;
                 }
-
-                
             }
         }
 
