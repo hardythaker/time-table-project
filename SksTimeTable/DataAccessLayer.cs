@@ -10,6 +10,10 @@ namespace SksTimeTable
 {
     public class DataAccessLayer
     {
+        HttpResponse response;
+
+        public static object Elmah { get; private set; }
+
         public static DataSet DisplayAllUsers()
         {
             DataSet dSet = new DataSet();
@@ -31,7 +35,7 @@ namespace SksTimeTable
             }
         }
 
-        public static DataSet isMemberExits(string un,string encPass)
+        public static bool isMemberExits(string un,string encPass)
         {
             DataSet dSet = new DataSet();
             using (MySqlConnection connection = ConnectionManager.GetDatabaseConnection())
@@ -41,16 +45,24 @@ namespace SksTimeTable
                     MySqlCommand command = new MySqlCommand("sp_isMemberExits", connection);
                     command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.Add("@username", MySqlDbType.VarChar).Value = un;
-                    command.Parameters.Add("@pwd", MySqlDbType.VarChar).Value = encPass;
+                    command.Parameters.Add("@encPwd", MySqlDbType.VarChar).Value = encPass;
                     MySqlDataAdapter adapter = new MySqlDataAdapter();
                     adapter.SelectCommand = command;
-                    adapter.Fill(dSet);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    if (dt.Rows.Count == 1)
+                    {
+                        return true;
+                    }
+                    else {
+                        return false;
+                    }
                 }
                 catch (Exception)
                 {
-                    throw;
+                    return false;
                 }
-                return dSet;
+                
             }
         }
         public static bool isMemRegSuccessful(string username, string encPass)
