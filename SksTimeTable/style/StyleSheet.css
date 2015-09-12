@@ -5,7 +5,7 @@ src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url(https://fonts
 unicode-range: U+0102-0103, U+1EA0-1EF1, U+20AB;
 font-size:14px;
 background-color:#ffffff;
-color:navy;
+color:rgb(50, 164, 255);
 }
 
 #container{
@@ -90,6 +90,12 @@ border-radius: 25px;
 #RequiredFieldValidator1, #RequiredFieldValidator2 {
       color:red;  
 }
+
+.ErrorControl
+    {
+        background-color: #FBE3E4;
+        border: solid 2px Red;
+    }
 
 
 
