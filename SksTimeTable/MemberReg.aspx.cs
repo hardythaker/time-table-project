@@ -15,18 +15,36 @@ namespace SksTimeTable
         }
 
         protected void RegMemBtn_Click(object sender, EventArgs e)
-        { 
-            if (Register.registerMember(UserNameTB.Text, PasswordTB.Text))
+        {
+            if (UserNameTB.Text !=" " && PasswordTB.Text !=" ")
             {
-                //Response.Write("Successfully registered");
-                regmsg.Text = "Successfully registered";
+                if (Register.registerMember(UserNameTB.Text, PasswordTB.Text))
+                {
+                    //Response.Write("Successfully registered Login With Your Email And Password");
+
+                    // Response.Write("<script> alert('Successfully Registered..! Click Ok To Login');</script>");
+                    // UserNameTB.Text = "";
+                    //regmsg.Text = "Successfully registered <a href=default.aspx>Click Here</a> To login";
+                    //Response.Redirect("default.aspx");
+                    
+                    ClientScript.RegisterStartupScript(Page.GetType(), "validation", "<script language='javascript'>alert('Succesfully Registered...!\\n Click Ok to Login');window.location.replace('default.aspx');</script>");
+                }
+                else
+                {
+                    //Response.Write("Registration failed");
+                    regmsg.Text = "Registration failed Try Again Later";
+                }
             }
-            else
-            {
-                //Response.Write("Registration failed");
-                regmsg.Text = "Registration failed Try Again Later";
+            else {
+                RequiredFieldValidator1.Text = "*";
+                RequiredFieldValidator2.Text = "*";
             }
              
+        }
+
+        protected void UserNameTB_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
