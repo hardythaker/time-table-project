@@ -13,6 +13,15 @@ namespace SksTimeTable {
     public partial class addData {
         
         /// <summary>
+        /// ScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        
+        /// <summary>
         /// lblSelectClass control.
         /// </summary>
         /// <remarks>
@@ -103,13 +112,13 @@ namespace SksTimeTable {
         protected global::System.Web.UI.WebControls.DropDownList listTimeSlots;
         
         /// <summary>
-        /// ScriptManager1 control.
+        /// DropDown1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.WebControls.DropDownList DropDown1;
         
         /// <summary>
         /// UpdatePanel1 control.
@@ -119,5 +128,14 @@ namespace SksTimeTable {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        
+        /// <summary>
+        /// lblAddTimeTableHeader control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAddTimeTableHeader;
     }
 }

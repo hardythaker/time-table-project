@@ -12,12 +12,20 @@ namespace SksTimeTable
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (Session["username"] == null)
+            {
+                Response.Redirect("default.aspx");
+            }
+            ScriptManager1.RegisterAsyncPostBackControl(listClass);
+
             DataTable dddt = DataAccessLayer.fetchClass();
             listClass.DataSource = dddt;
             listClass.DataTextField = "b_name";
             listClass.DataValueField = "b_id";
             listClass.DataBind();
             listClass.Items.Insert(0, new ListItem("--Select Class--", "0"));
+            
             dddt.Clear();
 
             dddt = DataAccessLayer.fetchDivision();
@@ -36,6 +44,12 @@ namespace SksTimeTable
             listSemester.Items.Insert(0, new ListItem("--Select Semester--", "0"));
             dddt.Clear();
 
+        }
+
+        protected void DropDown1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblAddTimeTableHeader.Text = listClass.SelectedItem.Text;
+           // lblAddTimeTableHeader.Text = listClass.Text;
         }
     }
 }
