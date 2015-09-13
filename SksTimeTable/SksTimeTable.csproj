@@ -90,6 +90,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="addData.aspx" />
     <Content Include="logout.aspx" />
     <Content Include="MemberReg.aspx" />
     <Content Include="packages.config" />
@@ -113,6 +114,13 @@
     <Content Include="admin.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addData.aspx.cs">
+      <DependentUpon>addData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addData.aspx.designer.cs">
+      <DependentUpon>addData.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Register.cs" />
     <Compile Include="ConnectionManager.cs" />
     <Compile Include="DataAccessLayer.cs" />
