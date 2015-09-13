@@ -62,7 +62,7 @@ namespace SksTimeTable
                 
             }
         }
-        public static bool isMemRegSuccessful(string username, string encPass)
+        public static bool isMemRegSuccessful(string un, string encPwd)
         {
             using (MySqlConnection connection = ConnectionManager.GetDatabaseConnection())
             {
@@ -70,8 +70,8 @@ namespace SksTimeTable
                 {
                     MySqlCommand command = new MySqlCommand("sp_regMembers", connection);
                     command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.Add("@username", MySqlDbType.VarChar).Value = username;
-                    command.Parameters.Add("@enyPass", MySqlDbType.VarChar).Value = encPass;
+                    command.Parameters.Add("@username", MySqlDbType.VarChar).Value = un;
+                    command.Parameters.Add("@encPass", MySqlDbType.VarChar).Value = encPwd;
 
                     //command.Parameters.AddWithValue("@username", username);
                     //command.Parameters.AddWithValue("@encPass", encPass);
@@ -98,6 +98,7 @@ namespace SksTimeTable
                     cmd.CommandType = CommandType.StoredProcedure;
                     MySqlDataAdapter adapter = new MySqlDataAdapter();
                     adapter.SelectCommand = cmd;
+                    con.Close();
                     DataSet ds = new DataSet();
                     adapter.Fill(ds);
                     DataTable dt = ds.Tables[0];
@@ -114,6 +115,25 @@ namespace SksTimeTable
                     cmd.CommandType = CommandType.StoredProcedure;
                     MySqlDataAdapter adapter = new MySqlDataAdapter();
                     adapter.SelectCommand = cmd;
+                    con.Close();
+                    DataSet ds = new DataSet();
+                    adapter.Fill(ds);
+                    DataTable dt = ds.Tables[0];
+                    return dt;
+                }
+            }
+        }
+
+        public static DataTable fetchSemester()
+        {
+            using (MySqlConnection con = ConnectionManager.GetDatabaseConnection())
+            {
+                using (MySqlCommand cmd = new MySqlCommand("sp_fetchSemester", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    MySqlDataAdapter adapter = new MySqlDataAdapter();
+                    adapter.SelectCommand = cmd;
+                    con.Close();
                     DataSet ds = new DataSet();
                     adapter.Fill(ds);
                     DataTable dt = ds.Tables[0];
