@@ -28,6 +28,14 @@ namespace SksTimeTable
             listDivision.Items.Insert(0, new ListItem("--Select Division--", "0"));
             dddt.Clear();
 
+            dddt = DataAccessLayer.fetchSemester();
+            listSemester.DataSource = dddt;
+            listSemester.DataTextField = "sem_name";
+            listSemester.DataValueField = "sem_id";
+            listSemester.DataBind();
+            listSemester.Items.Insert(0, new ListItem("--Select Semester--", "0"));
+            dddt.Clear();
+
         }
     }
 }

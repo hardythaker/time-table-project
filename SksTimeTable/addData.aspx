@@ -4,21 +4,30 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
 
-    <asp:Label ID="Label1" runat="server" Text="Select Branch : "></asp:Label>
+   <%-- <asp:Label ID="lblSelectBranch" runat="server" Text="Select Branch : "></asp:Label>
+    <asp:DropDownList ID="listBranch" runat="server"></asp:DropDownList>
+    &nbsp &nbsp &nbsp &nbsp--%>
+    <asp:Label ID="lblSelectClass" runat="server" Text="Select Class : "></asp:Label>
     <asp:DropDownList ID="listClass" runat="server"></asp:DropDownList>
-
-    <asp:Label ID="Label2" runat="server" Text="Select Class : "></asp:Label>
-    <asp:DropDownList ID="DropDownList2" runat="server"></asp:DropDownList>
-
-    <asp:Label ID="Label3" runat="server" Text="Select Div : "></asp:Label>
+    &nbsp &nbsp &nbsp &nbsp
+    <asp:Label ID="lblSelectSem" runat="server" Text="Select Sem :"></asp:Label>
+    <asp:DropDownList ID="listSemester" runat="server"></asp:DropDownList>
+    &nbsp &nbsp &nbsp &nbsp
+    <asp:Label ID="lblSelectDiv" runat="server" Text="Select Division : "></asp:Label>
     <asp:DropDownList ID="listDivision" runat="server"></asp:DropDownList>
-
-    <asp:Label ID="Label4" runat="server" Text="Select Class : "></asp:Label>
-    <asp:DropDownList ID="DropDownList4" runat="server"></asp:DropDownList>
-
-    <asp:Label ID="Label5" runat="server" Text="Select Class : "></asp:Label>
-    <asp:DropDownList ID="DropDownList5" runat="server"></asp:DropDownList>
+    &nbsp &nbsp &nbsp &nbsp
+    <asp:Label ID="Label1" runat="server" Text="Start Time : "></asp:Label>
+    <asp:DropDownList ID="listTime" runat="server"></asp:DropDownList>
+    &nbsp &nbsp &nbsp &nbsp
+    <asp:Label ID="Label2" runat="server" Text="Time Slots : "></asp:Label>
+    <asp:DropDownList ID="listTimeSlots" runat="server"></asp:DropDownList>
     <br />
+    <hr />
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-    <asp:UpdatePanel ID="UpdatePanel1" runat="server"></asp:UpdatePanel>
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <asp:Table runat="server">
+            <asp:TableRow></asp:TableRow>
+        </asp:Table>
+    </asp:UpdatePanel>
+   
 </asp:Content>
