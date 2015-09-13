@@ -8,13 +8,13 @@
     <%-- <asp:Label ID="lblSelectBranch" runat="server" Text="Select Branch : "></asp:Label>
     <asp:DropDownList ID="listBranch" runat="server"></asp:DropDownList>
     &nbsp &nbsp &nbsp &nbsp
-         OnSelectedIndexChanged="listClass_SelectedIndexChanged"--%>
+         --%>
     <div>
     <table style="width: 100%;">
         <tr>
             <td>
                 <asp:Label ID="lblSelectClass" runat="server" Text="Select Class : "></asp:Label>
-                <asp:DropDownList ID="listClass" runat="server" AutoPostBack="true"></asp:DropDownList>
+                <asp:DropDownList ID="listClass" runat="server" OnSelectedIndexChanged="listClass_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
 
 <           </td>
             <td>

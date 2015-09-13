@@ -46,7 +46,7 @@ namespace SksTimeTable
 
         }
 
-        protected void DropDown1_SelectedIndexChanged(object sender, EventArgs e)
+        protected void listClass_SelectedIndexChanged(object sender, EventArgs e)
         {
             lblAddTimeTableHeader.Text = listClass.SelectedItem.Text;
            // lblAddTimeTableHeader.Text = listClass.Text;
