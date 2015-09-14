@@ -21,6 +21,7 @@ namespace SksTimeTable
                     command.CommandType = CommandType.StoredProcedure;
                     MySqlDataAdapter adapter = new MySqlDataAdapter();
                     adapter.SelectCommand = command;
+                    connection.Close();
                     adapter.Fill(dSet);
                 }
                 catch (Exception)
@@ -57,6 +58,7 @@ namespace SksTimeTable
                 }
                 catch (Exception)
                 {
+                    connection.Close();
                     return false;
                 }
                 
@@ -88,6 +90,7 @@ namespace SksTimeTable
                 }
                 catch (Exception)
                 {
+                    connection.Close();
                     return false;
                 }
             }

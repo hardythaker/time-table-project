@@ -9,6 +9,7 @@
     <asp:DropDownList ID="listBranch" runat="server"></asp:DropDownList>
     &nbsp &nbsp &nbsp &nbsp
          --%>
+
     <div>
     <table style="width: 100%;">
         <tr>
@@ -39,7 +40,7 @@
 
             </td>
             <td>
-                <asp:DropDownList ID="DropDown1" runat="server" onselectedindexchanged="DropDown1_SelectedIndexChanged" AutoPostBack="true">
+                <asp:DropDownList ID="DropDown1" runat="server" AutoPostBack="true">
                 <asp:ListItem Value="a"></asp:ListItem>
                 <asp:ListItem Value="b"></asp:ListItem>
            </asp:DropDownList>
@@ -52,14 +53,14 @@
     
     
     <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
-         <Triggers>
-                    <asp:AsyncPostBackTrigger controlid="listClass" EventName="SelectedIndexChanged" />
-             </Triggers>
+         
         <ContentTemplate>
              <asp:Label ID="lblAddTimeTableHeader" runat="server" Text=""></asp:Label>
                  
         </ContentTemplate>
-       
+       <Triggers>
+                    <asp:AsyncPostBackTrigger controlid="listClass" EventName="SelectedIndexChanged" />
+             </Triggers>
     </asp:UpdatePanel>
        
 </asp:Content>

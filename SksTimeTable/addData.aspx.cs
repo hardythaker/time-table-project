@@ -20,12 +20,12 @@ namespace SksTimeTable
             ScriptManager1.RegisterAsyncPostBackControl(listClass);
 
             DataTable dddt = DataAccessLayer.fetchClass();
+            listClass.Items.Insert(0, new ListItem("--Select Class--", "0"));
             listClass.DataSource = dddt;
+            listClass.DataBind();
             listClass.DataTextField = "b_name";
             listClass.DataValueField = "b_id";
             listClass.DataBind();
-            listClass.Items.Insert(0, new ListItem("--Select Class--", "0"));
-            
             dddt.Clear();
 
             dddt = DataAccessLayer.fetchDivision();
@@ -38,6 +38,7 @@ namespace SksTimeTable
 
             dddt = DataAccessLayer.fetchSemester();
             listSemester.DataSource = dddt;
+            
             listSemester.DataTextField = "sem_name";
             listSemester.DataValueField = "sem_id";
             listSemester.DataBind();
@@ -48,7 +49,7 @@ namespace SksTimeTable
 
         protected void listClass_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lblAddTimeTableHeader.Text = listClass.SelectedItem.Text;
+            lblAddTimeTableHeader.Text = listClass.SelectedIndex.ToString();
            // lblAddTimeTableHeader.Text = listClass.Text;
         }
     }
