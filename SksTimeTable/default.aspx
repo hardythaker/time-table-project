@@ -1,12 +1,19 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="SksTimeTable.WebForm3" %>
 
 <!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head runat="server">
-    <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
-    <META HTTP-EQUIV="EXPIRES" CONTENT="0">
+   <meta HTTP-EQUIV="CACHE-CONTROL" content="NO-CACHE" >
+    <meta HTTP-EQUIV="EXPIRES" content="0" >
     <link href="../style/StyleSheet.css" rel="stylesheet" />
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400' rel='stylesheet' type='text/css'>
+    <%--<link href=https://fonts.googleapis.com/css?family=Roboto:400 rel='stylesheet' type='text/css'>--%>
+    
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.indigo-pink.min.css">
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
     <title>Login</title>    
     <style type="text/css">
         .auto-style1 {
@@ -85,8 +92,11 @@
                                 <td class="auto-style14" style="font-size: large" valign="middle" >
                                     SVV Mail ID : </td>
                                 <td align="Center" class="auto-style16">
-                                    <asp:TextBox ID="UserNameTB" runat="server" Width="93%" Placeholder="Enter SVV Mail ID..." CssClass="auto-style13" TextMode="Email"></asp:TextBox>
-                                </td>
+                                    <div class="mdl-textfield mdl-js-textfield">
+                                        <asp:TextBox ID="UserNameTB" runat="server" Class="mdl-textfield__input" TextMode="Email"></asp:TextBox>
+                                        <label class="mdl-textfield__label" for="UserNameTB" style="font-weight: 900">SVV Mail ID...</label>
+                                    </div>
+                                        </td>
                                 <td class="auto-style1">
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="UserNameTB" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
                                     <asp:RegularExpressionValidator ID="LoginEmailWrong_ValidationControl" runat="server" ErrorMessage="Invalid Email ID" Display="Dynamic" ControlToValidate="UserNameTB" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" CssClass="auto-style19"></asp:RegularExpressionValidator>
@@ -104,15 +114,21 @@
                                     Password :
                                 </td>
                                 <td align="Center" class="auto-style17">
-                                    <asp:TextBox ID="PasswordTB" runat="server" TextMode="Password" Width="92%" MaxLength="16"  Placeholder="Password..."></asp:TextBox>
+                                    <div class="mdl-textfield mdl-js-textfield">
+                                    <asp:TextBox Class="mdl-textfield__input" ID="PasswordTB" runat="server" TextMode="Password" MaxLength="16"></asp:TextBox>
+                                    <label class="mdl-textfield__label" for="PasswordTB" style="font-weight: 900">Password...</label>
+                                        </div>
                                 </td>
                                 <td>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="PasswordTB" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
                                 </td>
                             </tr>
                             <tr>
-                                <td align="Center" colspan="3">                              
-                                    <asp:Button ID="loginSubmitBtn" runat="server" Text="Sign In" Width="100px" Font-Size="Large" OnClick="loginSubmitBtn_Click"/>
+                                <td align="Center" colspan="3">   
+                                    <%--<input class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ID="loginSubmitBtn"  type="submit" value="submit" onclick="loginSubmitBtn_Click" runat="server" />--%>
+                                    <%--<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ID="loginSubmitBtn" type="submit" style="width:20%">Sign In</button>--%>                          
+                                    <asp:Button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ID="loginSubmitBtn" runat="server" OnClick="loginSubmitBtn_Click" text="Sign In" style="width:20%/>
+                                    <%--<asp:Button ID="Button1" runat="server" Text="Button" />--%>
                                 </td>
                             </tr>          
                             <tr>
