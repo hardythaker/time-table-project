@@ -1,9 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SksTimeTable.Master" AutoEventWireup="true" CodeBehind="addData.aspx.cs" Inherits="SksTimeTable.addData" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="Title" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
+   
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Title" runat="server">
     Add Data
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
+<asp:Content ID="Content3" ContentPlaceHolderID="Body" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <%-- <asp:Label ID="lblSelectBranch" runat="server" Text="Select Branch : "></asp:Label>
     <asp:DropDownList ID="listBranch" runat="server"></asp:DropDownList>
