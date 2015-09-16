@@ -5,11 +5,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head runat="server">
-   <meta HTTP-EQUIV="CACHE-CONTROL" content="NO-CACHE" >
-    <meta HTTP-EQUIV="EXPIRES" content="0" >
-    <link href="../style/StyleSheet.css" rel="stylesheet" />
-    <%--<link href=https://fonts.googleapis.com/css?family=Roboto:400 rel='stylesheet' type='text/css'>--%>
-    
+
+    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE" >
+    <meta http-equiv="EXPIRES" content="0" >
+    <link href="../style/StyleSheet.css" rel="stylesheet" > 
     <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.indigo-pink.min.css">
     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -66,6 +65,10 @@
         .auto-style19 {
             font-size: medium;
         }
+        .subBtn {
+            position: relative;
+            overflow: hidden;
+        }
     </style>
 <script type = "text/javascript" >
 
@@ -79,7 +82,7 @@
 </head>
 <body style="vertical-align:middle; height: 641px;" >
     <div class="auto-style2">
-        <table align="center" style="margin-top:10%;height:60%"  width="800px" cellspacing="10" bgcolor="#CCCCCC"  >
+        <table  align="center" style="margin-top:10%; height:60%; width:800px;" cellspacing="10" bgcolor="#CCCCCC"  >
             <tr><td></td></tr><tr><td class="auto-style6"><span class="auto-style8"><em>Not A Member ?</em></span> <a href="MemberReg.aspx" style="color:rgb(50, 164, 255)"><em><strong><span class="auto-style7">Sing Up</span></strong></em></a></td></tr>
             <tr>
                 <td class="auto-style9"> <strong>&nbsp; <span class="auto-style18">Admin Login</span> </strong> </td>
@@ -126,8 +129,12 @@
                             <tr>
                                 <td align="Center" colspan="3">   
                                     <%--<input class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ID="loginSubmitBtn"  type="submit" value="submit" onclick="loginSubmitBtn_Click" runat="server" />--%>
-                                    <%--<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ID="loginSubmitBtn" type="submit" style="width:20%">Sign In</button>--%>                          
-                                    <asp:Button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ID="loginSubmitBtn" runat="server" OnClick="loginSubmitBtn_Click" text="Sign In" style="width:20%/>
+                                    <%--<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ID="loginSubmitBtn" type="submit" style="width:20%">Sign In</button>--%>
+                                    
+                                                            
+                                            <asp:Button class="mdl-button mdl-js-button mdl-button--accent mdl-button--raised  mdl-js-ripple-effect" ID="loginSubmitBtn" runat="server" OnClick="loginSubmitBtn_Click" text="Sign In" style="width:20%"/>
+                            
+                                    
                                     <%--<asp:Button ID="Button1" runat="server" Text="Button" />--%>
                                 </td>
                             </tr>          
