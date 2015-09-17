@@ -29,8 +29,11 @@
 }
 
 table, tr, td {
-    background-color: #EEEEEE;
+    /*background-color: #EEEEEE;*/
     border-radius: 25px;
+}
+.nostyle {
+    background-color: white;
 }
 
 /*#UserNameTB, #PasswordTB {
