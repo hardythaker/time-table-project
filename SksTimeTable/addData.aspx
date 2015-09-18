@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SksTimeTable.Master" AutoEventWireup="true" CodeBehind="addData.aspx.cs" Inherits="SksTimeTable.addData" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SksTimeTable.Master" AutoEventWireup="true" CodeBehind="addData.aspx.cs" Inherits="SksTimeTable.addData" EnableViewState="true"%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
    
@@ -53,16 +53,25 @@
 
     <br />
 
-
+    <div>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
         <Triggers>
             <asp:AsyncPostBackTrigger ControlID="listClass" EventName="SelectedIndexChanged" />
+
         </Triggers>
         <ContentTemplate>
-            <asp:Label ID="lblAddTimeTableHeader" runat="server" Text=""></asp:Label>
+            <%--<asp:Label ID="lblAddTimeTableHeader" runat="server" Text=""></asp:Label>
+            <asp:DataList runat="server" ID="dtlist"></asp:DataList>--%>
+            <div>
+                <table style="width:100%; border:solid">
 
+
+                </table>
+
+            </div>
+            
         </ContentTemplate>
 
     </asp:UpdatePanel>
-
+</div>
 </asp:Content>

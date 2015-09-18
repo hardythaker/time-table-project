@@ -13,43 +13,49 @@ namespace SksTimeTable
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (Session["username"] == null)
+            //if (Session["username"] == null)
+            //{
+            //    Response.Redirect("default.aspx");
+            //}
+            // ScriptManager1.RegisterAsyncPostBackControl(listClass);
+            if (!IsPostBack)
             {
-                Response.Redirect("default.aspx");
+                DataTable dddt = DataAccessLayer.fetchClass();
+                listClass.DataSource = dddt;
+                listClass.DataTextField = "b_name";
+                listClass.DataValueField = "b_id";
+                listClass.DataBind();
+                listClass.Items.Insert(0, new ListItem("--Select Class--", "0"));
+
+                dddt.Clear();
+
+                dddt = DataAccessLayer.fetchDivision();
+                listDivision.DataSource = dddt;
+                listDivision.DataTextField = "division";
+                listDivision.DataValueField = "id";
+                listDivision.DataBind();
+                listDivision.Items.Insert(0, new ListItem("--Select Division--", "0"));
+                dddt.Clear();
+
+                dddt = DataAccessLayer.fetchSemester();
+                listSemester.DataSource = dddt;
+                listSemester.DataTextField = "sem_name";
+                listSemester.DataValueField = "sem_id";
+                listSemester.DataBind();
+                listSemester.Items.Insert(0, new ListItem("--Select Semester--", "0"));
+                dddt.Clear();
             }
-            ScriptManager1.RegisterAsyncPostBackControl(listClass);
-
-            DataTable dddt = DataAccessLayer.fetchClass();
-            listClass.DataSource = dddt;
-            listClass.DataTextField = "b_name";
-            listClass.DataValueField = "b_id";
-            listClass.DataBind();
-            listClass.Items.Insert(0, new ListItem("--Select Class--", "0"));
-            
-            dddt.Clear();
-
-            dddt = DataAccessLayer.fetchDivision();
-            listDivision.DataSource = dddt;
-            listDivision.DataTextField = "division";
-            listDivision.DataValueField = "id";
-            listDivision.DataBind();
-            listDivision.Items.Insert(0, new ListItem("--Select Division--", "0"));
-            dddt.Clear();
-
-            dddt = DataAccessLayer.fetchSemester();
-            listSemester.DataSource = dddt;
-            listSemester.DataTextField = "sem_name";
-            listSemester.DataValueField = "sem_id";
-            listSemester.DataBind();
-            listSemester.Items.Insert(0, new ListItem("--Select Semester--", "0"));
-            dddt.Clear();
-
         }
 
         protected void listClass_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lblAddTimeTableHeader.Text = listClass.SelectedValue.ToString();
-           // lblAddTimeTableHeader.Text = listClass.Text;
+            if (Convert.ToInt16(listClass.SelectedValue) != 0)
+            {
+                lblAddTimeTableHeader.Text = listClass.SelectedItem.Text;
+            }
+            else {
+                lblAddTimeTableHeader.Text = "";
+            }
         }
     }
 }
