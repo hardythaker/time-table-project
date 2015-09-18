@@ -92,6 +92,8 @@
   <ItemGroup>
     <Content Include="addData.aspx" />
     <Content Include="images\fb.png" />
+    <Content Include="images\ic_menu_white_24dp_1x.png" />
+    <Content Include="images\ic_menu_white_24dp_2x.png" />
     <Content Include="logout.aspx" />
     <Content Include="MemberReg.aspx" />
     <Content Include="packages.config" />
@@ -107,6 +109,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="default.aspx" />
+    <Content Include="style\material.min.css" />
+    <Content Include="style\material.min.js" />
     <Content Include="style\menuStyleSheet.css" />
     <Content Include="style\StyleSheet.css" />
     <Content Include="Web.config">
