@@ -9,10 +9,19 @@
     <meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
     <meta http-equiv="EXPIRES" content="0">
     <link href="../style/StyleSheet.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.indigo-pink.min.css">
-    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <%--<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.indigo-pink.min.css">--%>
+
+    <link href="style/material.min.css" rel="stylesheet" />
+
+    <%--<script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>--%>
+    
+    <script src="style/material.min.js"></script>
+    
+    <%--<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">--%>
+
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+
+
     <title>Login</title>
     <style type="text/css">
         .auto-style1 {
