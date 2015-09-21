@@ -64,6 +64,7 @@ namespace SksTimeTable
                 
             }
         }
+
         public static bool isMemRegSuccessful(string un, string encPwd)
         {
             using (MySqlConnection connection = ConnectionManager.GetDatabaseConnection())
@@ -95,6 +96,7 @@ namespace SksTimeTable
                 }
             }
         }
+
         public static DataTable fetchClass() {
             using (MySqlConnection con = ConnectionManager.GetDatabaseConnection()) {
                 using (MySqlCommand cmd = new MySqlCommand("sp_fetchClassName",con)) {
@@ -109,6 +111,7 @@ namespace SksTimeTable
                 }
             }
         }
+
         public static DataTable fetchDivision()
         {
             using (MySqlConnection con = ConnectionManager.GetDatabaseConnection())
