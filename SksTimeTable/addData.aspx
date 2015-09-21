@@ -63,8 +63,40 @@
             <%--<asp:Label ID="lblAddTimeTableHeader" runat="server" Text=""></asp:Label>
             <asp:DataList runat="server" ID="dtlist"></asp:DataList>--%>
             <div>
-                <table style="width:100%; border:solid">
-
+                <table class="mdl-data-table" style="width:80%" align="center">
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            <asp:Label ID="lblTimeSlots" runat="server" Text="Time-Slots"></asp:Label>
+                        </td>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            Monday
+                        </td>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            Tuesday
+                        </td>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            Wednesday
+                        </td>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            Thurday
+                        </td>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            Friday
+                        </td>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            Saturday
+                        </td>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            Sunday
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="lblAddTimeTableHeader" runat="server" Text=""></asp:Label>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
 
                 </table>
 
