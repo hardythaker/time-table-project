@@ -118,7 +118,7 @@
     </script>
 </head>
 <body style="vertical-align: middle;">
-    <div class="auto-style2">
+    <div id="wrapper" class="auto-style2">
         <asp:Panel ID="Panel1" runat="server" HorizontalAlign="Center">
             <br />
             <br />
@@ -128,7 +128,7 @@
             <br />
             <br />
 
-
+            <div id="content">
             <table id="logininnertable" align="center" style="height: 60%; width: 800px;" cellspacing="10" class="mdl-color--grey-300">
                 <tr>
                     <td></td>
@@ -147,7 +147,7 @@
                                     <td class="auto-style14" style="font-size: large" valign="middle"></td>
                                     <td align="Center" class="auto-style16">
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                            <asp:TextBox ID="UserNameTB" runat="server" Class="mdl-textfield__input mdl-color-text--accent" TextMode="Email"></asp:TextBox>
+                                            <asp:TextBox ID="UserNameTB" runat="server" class="mdl-textfield__input mdl-color-text--accent" TextMode="Email"></asp:TextBox>
                                             <label class="mdl-textfield__label  mdl-color-text--primary-dark mdl-typography--font-bold" for="UserNameTB">SVV Mail ID...</label>
                                         </div>
                                     </td>
@@ -161,7 +161,7 @@
                                     <td style="font-size: large" valign="middle" class="auto-style15"></td>
                                     <td align="Center" class="auto-style17">
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                            <asp:TextBox Class="mdl-textfield__input mdl-color-text--accent" ID="PasswordTB" runat="server" TextMode="Password" MaxLength="16"></asp:TextBox>
+                                            <asp:TextBox class="mdl-textfield__input mdl-color-text--accent" ID="PasswordTB" runat="server" TextMode="Password" MaxLength="16"></asp:TextBox>
                                             <label class="mdl-textfield__label  mdl-color-text--primary-dark mdl-typography--font-bold" for="PasswordTB">Password...</label>
                                         </div>
                                     </td>
@@ -196,6 +196,7 @@
                     <td></td>
                 </tr>
             </table>
+                </div>
         </asp:Panel>
         <br />
         <br />
@@ -204,7 +205,7 @@
         <br />
         <br />
         <br />
-        <%-- <div id="footer" style=" align-items:baseline ">--%>
+       <div id="footer">
         <footer class="mdl-mini-footer">
             <%--<br /><br /><br /><%--<br /><br /><br /><br /><br />--%>
 
@@ -228,7 +229,7 @@
                 </ul>
             </div>
         </footer>
-        <%-- </div>--%>
+       </div>
     </div>
 </body>
 </html>
