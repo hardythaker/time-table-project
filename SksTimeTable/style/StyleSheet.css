@@ -7,6 +7,20 @@
     color: #3F51B5;
 }
 
+#main {
+    min-height:100%;
+	position:relative;
+}
+#content {
+    padding-bottom:139px; /* Height of the footer element */
+
+}
+#footer {
+   // position:absolute;
+	//bottom:0;
+	//left:0;
+}
+
 #container {
     position: relative;
     top: 0px;
