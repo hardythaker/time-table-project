@@ -133,7 +133,7 @@
                         <td></td>
                     </tr>
                     <tr>
-                        <td class="auto-style6"><span class="auto-style8"><em>Not A Member ?</em></span> <a href="MemberReg.aspx" class="auto-style20"><span class="auto-style8">Sing Up</span></a></td>
+                        <td class="auto-style6"><span class="auto-style8"><em>Not A Member ?</em></span> <a href="MemberReg.aspx" class="auto-style20"><span class="auto-style8">Sign Up</span></a></td>
                     </tr>
                     <tr>
                         <td class="auto-style9"><strong>&nbsp; <span class="auto-style18">Admin Login</span> </strong></td>
@@ -176,7 +176,7 @@
 
 
 
-                                            <asp:Button class="mdl-button mdl-button--primary mdl-button--raised mdl-typography--font-bold" Text="Sing In" ID="loginSubmitBtn" OnClick="loginSubmitBtn_Click" runat="server" Style="width: 20%" />
+                                            <asp:Button class="mdl-button mdl-button--primary mdl-button--raised mdl-typography--font-bold" Text="Sign In" ID="loginSubmitBtn" OnClick="loginSubmitBtn_Click" runat="server" Style="width: 20%" />
 
 
                                             <%--<asp:Button ID="Button1" runat="server" Text="Button" />--%>
