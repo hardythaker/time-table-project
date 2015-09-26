@@ -1,7 +1,16 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SksTimeTable.Master" AutoEventWireup="true" CodeBehind="addData.aspx.cs" Inherits="SksTimeTable.addData" EnableViewState="true"%>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SksTimeTable.Master" AutoEventWireup="true" CodeBehind="addData.aspx.cs" Inherits="SksTimeTable.addData" EnableViewState="true" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
-   
+    <style>
+        .demo-card-wide.mdl-card {
+            align-content:center;
+            width: 90%;
+        }
+        .cen {
+            vertical-align:central;
+            text-align:center;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Title" runat="server">
     Add Data
@@ -54,56 +63,60 @@
     <br />
 
     <div>
-    <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
-        <Triggers>
-            <asp:AsyncPostBackTrigger ControlID="listClass" EventName="SelectedIndexChanged" />
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+            <Triggers>
+                <asp:AsyncPostBackTrigger ControlID="listClass" EventName="SelectedIndexChanged" />
 
-        </Triggers>
-        <ContentTemplate>
-            <%--<asp:Label ID="lblAddTimeTableHeader" runat="server" Text=""></asp:Label>
+            </Triggers>
+            <ContentTemplate>
+                <%--<asp:Label ID="lblAddTimeTableHeader" runat="server" Text=""></asp:Label>
             <asp:DataList runat="server" ID="dtlist"></asp:DataList>--%>
-            <div>
-                <table class="mdl-data-table" style="width:80%" align="center">
-                    <tr>
-                        <td class="mdl-data-table__cell--non-numeric">
-                            <asp:Label ID="lblTimeSlots" runat="server" Text="Time-Slots"></asp:Label>
-                        </td>
-                        <td class="mdl-data-table__cell--non-numeric">
-                            Monday
-                        </td>
-                        <td class="mdl-data-table__cell--non-numeric">
-                            Tuesday
-                        </td>
-                        <td class="mdl-data-table__cell--non-numeric">
-                            Wednesday
-                        </td>
-                        <td class="mdl-data-table__cell--non-numeric">
-                            Thurday
-                        </td>
-                        <td class="mdl-data-table__cell--non-numeric">
-                            Friday
-                        </td>
-                        <td class="mdl-data-table__cell--non-numeric">
-                            Saturday
-                        </td>
-                        <td class="mdl-data-table__cell--non-numeric">
-                            Sunday
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Label ID="lblAddTimeTableHeader" runat="server" Text=""></asp:Label>
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+               <center>
+                <div class="demo-card-wide mdl-card mdl-shadow--8dp">
+                    <div class="mdl-card__title">
+                        <p class="mdl-card__title-text">
+                           TimeTable Information System
+                        </p>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        
+                        <table class="mdl-data-table" style="width: 100%;font:bold" align="center">
+                            <tr>
+                                <td style="text-align: center" colspan="8">
+                                     <asp:Label ID="lblAddTimeTableHeader" runat="server" Font-Bold="True" Font-Size="Large"></asp:Label>
+                                </td>
+                            </tr>
+                            <tr>
+                                
+                                <td class="mdl-data-table__cell--non-numeric">
+                                    <asp:Label ID="lblTimeSlots" runat="server" Text="Time-Slots" Font-Bold="True"></asp:Label>
+                                </td>
+                                <td class="mdl-data-table__cell--non-numeric"><b>Monday</b>
+                                </td>
+                                <td class="mdl-data-table__cell--non-numeric"><b>Tuesday</b>
+                                </td>
+                                <td class="mdl-data-table__cell--non-numeric"><b>Wednesday</b>
+                                </td>
+                                <td class="mdl-data-table__cell--non-numeric"><b>Thurday</b>
+                                </td>
+                                <td class="mdl-data-table__cell--non-numeric"><b>Friday</b>
+                                </td>
+                                <td class="mdl-data-table__cell--non-numeric"><b>Saturday</b>
+                                </td>
+                                <td class="mdl-data-table__cell--non-numeric"><b>Sunday</b>
+                                </td>
+                                
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-color-text--white mdl-color--accent  mdl-js-button mdl-js-ripple-effect">Save
+                        </a>
+                    </div>
+                </div>
+                      </center>
+            </ContentTemplate>
 
-                </table>
-
-            </div>
-            
-        </ContentTemplate>
-
-    </asp:UpdatePanel>
-</div>
+        </asp:UpdatePanel>
+    </div>
 </asp:Content>
