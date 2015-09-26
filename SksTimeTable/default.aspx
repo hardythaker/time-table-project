@@ -14,9 +14,9 @@
     <link href="style/material.min.css" rel="stylesheet" />
 
     <%--<script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>--%>
-    
+
     <script src="style/material.min.js"></script>
-    
+
     <%--<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">--%>
 
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
@@ -118,118 +118,112 @@
     </script>
 </head>
 <body style="vertical-align: middle;">
-    <div id="wrapper" class="auto-style2">
-        <asp:Panel ID="Panel1" runat="server" HorizontalAlign="Center">
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
+    <div id="main" class="auto-style2">
+        <div id="content">
+            <asp:Panel ID="Panel1" runat="server" HorizontalAlign="Center">
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <table id="logininnertable" align="center" style="height: 60%; width: 800px;" cellspacing="10" class="mdl-color--grey-300">
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style6"><span class="auto-style8"><em>Not A Member ?</em></span> <a href="MemberReg.aspx" class="auto-style20"><span class="auto-style8">Sing Up</span></a></td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style9"><strong>&nbsp; <span class="auto-style18">Admin Login</span> </strong></td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style1">
+                            <form name="login" method="post" runat="server">
+                                <table align="center" cellspacing="10" class="auto-style10">
+                                    <tr>
+                                        <td class="auto-style14" style="font-size: large" valign="middle"></td>
+                                        <td align="Center" class="auto-style16">
+                                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"> 
+                                                <asp:TextBox ID="UserNameTB" runat="server" class="mdl-textfield__input mdl-color-text--accent" TextMode="Email"></asp:TextBox>
+                                                <label class="mdl-textfield__label  mdl-color-text--primary-dark mdl-typography--font-bold" for="UserNameTB">SVV Mail ID...</label>
+                                            </div>
+                                        </td>
+                                        <td class="auto-style21">
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="UserNameTB" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
+                                            <asp:RegularExpressionValidator ID="LoginEmailWrong_ValidationControl" runat="server" ErrorMessage="Invalid Email ID" Display="Dynamic" ControlToValidate="UserNameTB" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" CssClass="auto-style19"></asp:RegularExpressionValidator>
+                                        </td>
 
-            <div id="content">
-            <table id="logininnertable" align="center" style="height: 60%; width: 800px;" cellspacing="10" class="mdl-color--grey-300">
-                <tr>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td class="auto-style6"><span class="auto-style8"><em>Not A Member ?</em></span> <a href="MemberReg.aspx" class="auto-style20"><span class="auto-style8">Sing Up</span></a></td>
-                </tr>
-                <tr>
-                    <td class="auto-style9"><strong>&nbsp; <span class="auto-style18">Admin Login</span> </strong></td>
-                </tr>
-                <tr>
-                    <td class="auto-style1">
-                        <form name="login" method="post" runat="server">
-                            <table align="center" cellspacing="10" class="auto-style10">
-                                <tr>
-                                    <td class="auto-style14" style="font-size: large" valign="middle"></td>
-                                    <td align="Center" class="auto-style16">
-                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                            <asp:TextBox ID="UserNameTB" runat="server" class="mdl-textfield__input mdl-color-text--accent" TextMode="Email"></asp:TextBox>
-                                            <label class="mdl-textfield__label  mdl-color-text--primary-dark mdl-typography--font-bold" for="UserNameTB">SVV Mail ID...</label>
-                                        </div>
-                                    </td>
-                                    <td class="auto-style21">
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="UserNameTB" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
-                                        <asp:RegularExpressionValidator ID="LoginEmailWrong_ValidationControl" runat="server" ErrorMessage="Invalid Email ID" Display="Dynamic" ControlToValidate="UserNameTB" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" CssClass="auto-style19"></asp:RegularExpressionValidator>
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                    <td style="font-size: large" valign="middle" class="auto-style15"></td>
-                                    <td align="Center" class="auto-style17">
-                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                            <asp:TextBox class="mdl-textfield__input mdl-color-text--accent" ID="PasswordTB" runat="server" TextMode="Password" MaxLength="16"></asp:TextBox>
-                                            <label class="mdl-textfield__label  mdl-color-text--primary-dark mdl-typography--font-bold" for="PasswordTB">Password...</label>
-                                        </div>
-                                    </td>
-                                    <td class="mdl-typography--text-left">
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="PasswordTB" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="Center" colspan="3">
-                                        <%--<input class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent" ID="loginSubmitBtn"  type="button" value="submit" onclick="loginSubmitBtn_Click" runat="server" />--%>
-                                        <%--<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent " id="loginSubmitBtn" onclick="loginSubmitBtn_Click()" style="width: 20%">Sign In</button>--%>
-
-
-
-                                        <asp:Button class="mdl-button mdl-button--primary mdl-button--raised mdl-typography--font-bold" Text="Sing In" ID="loginSubmitBtn" OnClick="loginSubmitBtn_Click" runat="server" Style="width: 20%" />
+                                    </tr>
+                                   
+                                    <tr>
+                                        <td style="font-size: large" valign="middle" class="auto-style15"></td>
+                                        <td align="Center" class="auto-style17">
+                                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                                <asp:TextBox class="mdl-textfield__input mdl-color-text--accent" ID="PasswordTB" runat="server" TextMode="Password" MaxLength="16"></asp:TextBox>
+                                                <label class="mdl-textfield__label  mdl-color-text--primary-dark mdl-typography--font-bold" for="PasswordTB">Password...</label>
+                                            </div>
+                                        </td>
+                                        <td class="mdl-typography--text-left">
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="PasswordTB" ErrorMessage="*" Display="Dynamic"></asp:RequiredFieldValidator>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="Center" colspan="3">
+                                            <%--<input class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent" ID="loginSubmitBtn"  type="button" value="submit" onclick="loginSubmitBtn_Click" runat="server" />--%>
+                                            <%--<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent " id="loginSubmitBtn" onclick="loginSubmitBtn_Click()" style="width: 20%">Sign In</button>--%>
 
 
-                                        <%--<asp:Button ID="Button1" runat="server" Text="Button" />--%>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" colspan="3">
-                                        <asp:Label ID="msg" runat="server" ForeColor="Red" CssClass="auto-style19"></asp:Label><br />
-                                        <asp:Label ID="msg2" runat="server" ForeColor="#9AC9ED"></asp:Label>
-                                    </td>
-                                </tr>
-                            </table>
-                        </form>
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                </tr>
-            </table>
+
+                                            <asp:Button class="mdl-button mdl-button--primary mdl-button--raised mdl-typography--font-bold" Text="Sing In" ID="loginSubmitBtn" OnClick="loginSubmitBtn_Click" runat="server" Style="width: 20%" />
+
+
+                                            <%--<asp:Button ID="Button1" runat="server" Text="Button" />--%>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" colspan="3">
+                                            <asp:Label ID="msg" runat="server" ForeColor="Red" CssClass="auto-style19"></asp:Label><br />
+                                            <asp:Label ID="msg2" runat="server" ForeColor="#9AC9ED"></asp:Label>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                </table>
+            </asp:Panel>
+        </div>
+
+        <div id="footer">
+            <footer class="mdl-mini-footer">
+                <%--<br /><br /><br /><%--<br /><br /><br /><br /><br />--%>
+
+                <div class="mdl-mini-footer__left-section">
+                    <div class="mdl-logo">Title</div>
+                    <ul class="mdl-mini-footer__link-list">
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Privacy & Terms</a></li>
+                    </ul>
                 </div>
-        </asp:Panel>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-       <div id="footer">
-        <footer class="mdl-mini-footer">
-            <%--<br /><br /><br /><%--<br /><br /><br /><br /><br />--%>
-
-            <div class="mdl-mini-footer__left-section">
-                <div class="mdl-logo">Title</div>
-                <ul class="mdl-mini-footer__link-list">
-                    <li><a href="#">Help</a></li>
-                    <li><a href="#">Privacy & Terms</a></li>
-                </ul>
-            </div>
-            <div class="mdl-mini-footer--right-section">
-                <div class="mdl-logo">Title</div>
-                <ul class="mdl-mini-footer__link-list">
-                    <li><a href="#">Designed & Developed by :</a></li>
-                    <li><a href="http://www.facebook.com/hardythaker">Hardik Thaker</a></li>
-                    <li>
-                        <a href="http://www.facebook.com/hardythaker" target="_blank">
-                            <img src="../images/fb.png" />
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </footer>
-       </div>
+                <div class="mdl-mini-footer--right-section">
+                    <div class="mdl-logo">Title</div>
+                    <ul class="mdl-mini-footer__link-list">
+                        <li><a href="#">Designed & Developed by :</a></li>
+                        <li><a href="http://www.facebook.com/hardythaker">Hardik Thaker</a></li>
+                        <li>
+                            <a href="http://www.facebook.com/hardythaker" target="_blank">
+                                <img src="../images/fb.png" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
     </div>
 </body>
 </html>
