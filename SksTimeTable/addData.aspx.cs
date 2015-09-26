@@ -49,13 +49,7 @@ namespace SksTimeTable
 
         protected void listClass_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Convert.ToInt16(listClass.SelectedValue) != 0)
-            {
-                lblAddTimeTableHeader.Text = listClass.SelectedItem.Text;
-            }
-            else {
-                lblAddTimeTableHeader.Text = "";
-            }
+            lblAddTimeTableHeader.Text = listClass.SelectedItem.Text;
         }
     }
 }

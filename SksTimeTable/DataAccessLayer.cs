@@ -58,6 +58,7 @@ namespace SksTimeTable
                 }
                 catch (Exception)
                 {
+                    connection.Close();
                     return false;
                 }
                 
@@ -90,6 +91,7 @@ namespace SksTimeTable
                 }
                 catch (Exception)
                 {
+                    connection.Close();
                     return false;
                 }
             }
