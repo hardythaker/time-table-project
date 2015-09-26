@@ -17,7 +17,7 @@
             <tr>
                 <td>
                     <asp:Label ID="lblSelectClass" runat="server" Text="Select Class : "></asp:Label>
-                    <asp:DropDownList ID="listClass" runat="server" OnSelectedIndexChanged="listClass_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+                    <asp:DropDownList ID="listClass" runat="server" OnSelectedIndexChanged="listClass_SelectedIndexChanged" AutoPostBack="true" Class=""></asp:DropDownList>
 
                 </td>
                 <td>
@@ -60,10 +60,10 @@
 
         </Triggers>
         <ContentTemplate>
-            <%--<asp:Label ID="lblAddTimeTableHeader" runat="server" Text=""></asp:Label>
-            <asp:DataList runat="server" ID="dtlist"></asp:DataList>--%>
+            <asp:Label ID="lblAddTimeTableHeader" runat="server" Text=""></asp:Label>
+            <asp:DataList runat="server" ID="dtlist"></asp:DataList>
             <div>
-                <table style="width:100%; border:solid">
+                <table class="mdl-data-table" style="width:100%; border:solid">
 
 
                 </table>
