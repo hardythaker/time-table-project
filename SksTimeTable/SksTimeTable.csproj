@@ -96,6 +96,7 @@
     <Content Include="SksTimeTable.Master" />
     <None Include="Properties\PublishProfiles\myasp.net ftp.pubxml" />
     <None Include="Properties\PublishProfiles\myasp.net.pubxml" />
+    <None Include="Properties\PublishProfiles\smartasp.net.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
