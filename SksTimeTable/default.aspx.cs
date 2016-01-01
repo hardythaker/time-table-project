@@ -21,23 +21,49 @@ namespace SksTimeTable
             //string username = UserNameTB.Text;
             //PwdEncrypt.passwordEnc(PasswordTB.Text);
             //string password = PasswordTB.Text;
-            string hashval = HashGenerator.getHash(UserNameTB.Text,PasswordTB.Text);
 
-            if(DataAccessLayer.isMemberExits(UserNameTB.Text, hashval))
-            { 
+
+
+
+
+
+
+
+
+
+            ///string hashval = HashGenerator.getHash(UserNameTB.Text,PasswordTB.Text);
+
+           /// if(DataAccessLayer.isMemberExits(UserNameTB.Text, hashval))
+          /// { 
                 //if (dSet.Tables[0].Rows.Count > 0)
                 //{
                     Session["username"] = UserNameTB.Text;
                     Response.Redirect("Admin.aspx");
                 //}
                 
-            }
-            else
-            {
+            ///}
+            ///else
+            ///{
 
-                msg.Text = "Wrong user id or Password";
-                msg2.Text = " Not A member ? Click <a href=MemberReg.aspx>Here</a> To Register ";
-            }
+             ///   msg.Text = "Wrong user id or Password";
+              ///  msg2.Text = " Not A member ? Click <a href=MemberReg.aspx>Here</a> To Register ";
+           /// }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             //catch (Exception ex) {
             //    Response.Write(ex.Message);
             //}

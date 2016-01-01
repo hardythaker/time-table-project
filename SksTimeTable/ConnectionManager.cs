@@ -15,7 +15,7 @@ namespace SksTimeTable
 
                     dbcon.Open();
                 }catch(Exception ex){
-                    throw;
+                throw ex;
                 }
                 return dbcon;
             }

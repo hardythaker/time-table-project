@@ -107,6 +107,21 @@
                                 </td>
                                 
                             </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">
+                                    <asp:DropDownList ID="timeslots" runat="server" OnSelectedIndexChanged="timeslots_SelectedIndexChanged">
+                                        <asp:ListItem Value="0">--select--</asp:ListItem>
+                                        <asp:ListItem Value="1">Time-Range</asp:ListItem>
+                                    </asp:DropDownList>
+                                </td>
+                                <td class="mdl-data-table__cell--non-numeric"></td>
+                                <td class="mdl-data-table__cell--non-numeric"></td>
+                                <td class="mdl-data-table__cell--non-numeric"></td>
+                                <td class="mdl-data-table__cell--non-numeric"></td>
+                                <td class="mdl-data-table__cell--non-numeric"></td>
+                                <td class="mdl-data-table__cell--non-numeric"></td>
+                                <td class="mdl-data-table__cell--non-numeric"></td>
+                            </tr>
                         </table>
                     </div>
                     <div class="mdl-card__actions mdl-card--border">
